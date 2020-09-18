@@ -1,6 +1,9 @@
 #pragma once
+
+
 #include <vector>
 #include <functional>
+#include <cstdint>
 
 namespace cluster
 {
@@ -51,7 +54,9 @@ namespace cluster
 
 	public:
 
-		Cluster(dist_func_t const& f) : m_dist_func(f) {}
+		Cluster() : m_dist_func([](data_row_t const& data, value_row_t const& centroid) { return 0.0; }) {}
+
+		void set_distance(dist_func_t const& f) { m_dist_func = f; }
 
 		// determines clusters given the data and the number of clusters
 		value_row_list_t cluster_data(data_row_list_t const& x_list, size_t num_clusters) const;
