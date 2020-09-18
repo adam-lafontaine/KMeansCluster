@@ -146,7 +146,7 @@ namespace cluster
 		return to_value_row_list(samples);
 	}
 
-	size_t max_value(index_list_t list)
+	size_t max_value(index_list_t const& list)
 	{
 		return *std::max_element(list.begin(), list.end());
 	}
@@ -319,7 +319,7 @@ namespace cluster
 		{
 			auto data_row = data_row_list[i];
 			for (size_t j = 0; j < data_row.size(); ++j)
-				list[i][j] = value_to_data(data_row[j]);
+				list[i][j] = data_to_value(data_row[j]);
 		}
 
 		return list;
