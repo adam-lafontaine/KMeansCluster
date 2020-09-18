@@ -34,7 +34,7 @@ namespace cluster
 	}
 
 
-	// calculates the average spared difference
+	// calculates the average squared difference
 	template<typename T>
 	double list_distance(std::vector<T> const& lhs, std::vector<T> const& rhs)
 	{
@@ -60,6 +60,7 @@ namespace cluster
 
 		return row;
 	}
+	
 
 	inline
 	value_row_list_t make_value_row_list(size_t list_capacity, size_t row_capacity)
