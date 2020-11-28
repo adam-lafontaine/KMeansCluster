@@ -7,4 +7,5 @@ K means clustering algorithms
 
 ##ClusterV2
 * C++17
-*Class that allows for specifying a custom distance function between data and centroids
+* Define a custom distance function between data and centroids
+* Define how data is used to create a centroid
